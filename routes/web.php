@@ -18,3 +18,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+Route::get('/new_page/', ['middleware' => ['auth', 'custom-check'], 'uses' => 'NewPageController@index',
+]);
+

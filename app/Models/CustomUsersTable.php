@@ -1,13 +1,15 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class User extends Authenticatable
+class CustomUsersTable extends Authenticatable
 {
     use Notifiable;
+
+    protected $table = 'custom_users_table';
 
     /**
      * The attributes that are mass assignable.
@@ -15,7 +17,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'family_name', 'phone',
+        'id', 'name', 'surname', 'phone', 'email', 'password', 'fb_url', 'age',
     ];
 
     /**
